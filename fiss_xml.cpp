@@ -12,7 +12,7 @@
 #endif
 
 #ifndef FISS_XML_PATH
-#define FISS_XML_PATH "data\\SKSE\\Plugins\\FISS"
+#define FISS_XML_PATH "Data\\SKSE\\Plugins\\FISS"
 #endif
 
 #ifndef FISS_XML_VER
