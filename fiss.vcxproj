@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -75,9 +75,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -89,9 +91,14 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;FISS_EXPORTS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)..;$(SolutionDir)..\..;$(SolutionDir)..\skse64-gog;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>common/IPrefix.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>C:\plugin_src\common\x64_v143\Release\IDebugLog.obj;C:\plugin_src\common\x64_v143\Release\IErrors.obj;C:\plugin_src\common\x64_v143\Release\IFileStream.obj;C:\plugin_src\common\x64_v143\Release\IDataStream.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\PapyrusArgs.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\PapyrusVM.obj;C:\plugin_src\skse64-gog\skse64_common\x64\Release\Relocation.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\GameAPI.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\GameTypes.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\GameUtilities.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\PapyrusInterfaces.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -101,9 +108,14 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;FISS_EXPORTS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)..;$(SolutionDir)..\..;$(SolutionDir)..\skse64-gog;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>common/IPrefix.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>C:\plugin_src\common\x64_v143\Release\IDebugLog.obj;C:\plugin_src\common\x64_v143\Release\IErrors.obj;C:\plugin_src\common\x64_v143\Release\IFileStream.obj;C:\plugin_src\common\x64_v143\Release\IDataStream.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\PapyrusArgs.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\PapyrusVM.obj;C:\plugin_src\skse64-gog\skse64_common\x64\Release\Relocation.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\GameAPI.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\GameTypes.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\GameUtilities.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\PapyrusInterfaces.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -115,13 +127,17 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;FISS_EXPORTS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
-      <LanguageStandard_C>stdc11</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)..\common\</AdditionalIncludeDirectories>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)..;$(SolutionDir)..\..;$(SolutionDir)..\skse64-gog;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>common/IPrefix.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>C:\plugin_src\common\x64_v143\Release\IDebugLog.obj;C:\plugin_src\common\x64_v143\Release\IErrors.obj;C:\plugin_src\common\x64_v143\Release\IFileStream.obj;C:\plugin_src\common\x64_v143\Release\IDataStream.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\PapyrusArgs.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\PapyrusVM.obj;C:\plugin_src\skse64-gog\skse64_common\x64\Release\Relocation.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\GameAPI.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\GameTypes.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\GameUtilities.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\PapyrusInterfaces.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -133,22 +149,21 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;FISS_EXPORTS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
-      <ForcedIncludeFiles>common/IPrefix.h</ForcedIncludeFiles>
-      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)..\common\</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>common/IPrefix.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)..;$(SolutionDir)..\..;$(SolutionDir)..\skse64-gog;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <LanguageStandard_C>Default</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <MapExports>false</MapExports>
-      <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <AdditionalDependencies>C:\plugin_src\common\x64_v143\Release\IDebugLog.obj;C:\plugin_src\common\x64_v143\Release\IErrors.obj;C:\plugin_src\common\x64_v143\Release\IFileStream.obj;C:\plugin_src\common\x64_v143\Release\IDataStream.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\PapyrusArgs.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\PapyrusVM.obj;C:\plugin_src\skse64-gog\skse64_common\x64\Release\Relocation.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\GameAPI.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\GameTypes.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\GameUtilities.obj;C:\plugin_src\skse64-gog\skse64\x64\Release\PapyrusInterfaces.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <None Include="exports.def" />
-  </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FissesMain.cpp" />
     <ClCompile Include="FissesPlugin.cpp" />
@@ -157,17 +172,6 @@
   <ItemGroup>
     <ClInclude Include="FissesPlugin.h" />
     <ClInclude Include="fiss_xml.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\common\common\common_vc14.vcxproj">
-      <Project>{472e19ab-def0-42df-819b-18722e8dc822}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\skse64\skse64.vcxproj">
-      <Project>{7028b79c-06e3-4d9a-b38c-1dc3680b1bdb}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\skse64_common\skse64_common.vcxproj">
-      <Project>{5fd1c08d-db80-480c-a1c6-f0920005cd13}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
